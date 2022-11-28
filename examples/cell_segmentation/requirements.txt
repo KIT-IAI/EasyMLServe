@@ -1,0 +1,9 @@
+torch==1.12.1
+torchvision==0.13.1
+torchmetrics==0.6.0
+pytorch_lightning==1.4.9
+scikit-image==0.19.3
+git+https://git.scc.kit.edu/sc1357/kaida.git@c428d0c8#egg=KaIDA
+wandb==0.13.5
+opencv-python
+albumentations==0.5.2

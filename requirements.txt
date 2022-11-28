@@ -1,0 +1,9 @@
+requests
+pillow
+numpy
+python-multipart
+fastapi[all]
+fastapi-utils
+uvicorn[standard]
+gradio==3.3
+PyQt6

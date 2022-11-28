@@ -1,92 +1,51 @@
-# EasyServe
+# EasyMLServe: Easy Deployment of REST Machine Learning Services
 
-Deploy machine learning pipelines easily in a RESTful way.
+This repository contains the Python implementation of the EasyMLServe framework presented in the paper:
+>[O. Neumann](mailto:oliver.neumann@kit.edu), Marcel Schilling, Markus Reischl, and Ralf Mikut, 2022, "EasyMLServe: Easy Deployment of REST Machine Learning Services," in Proceedings. 32. Workshop Computational Intelligence Berlin, 1. – 2. December 2022, H. Schulte, F. Hoffmann, R. Mikut (Eds.), KIT Scientific Publishing Karlsruhe, pp. 11-30.
 
-## Getting started
+Available at [KIT Scientific Publishing](https://www.ksp.kit.edu/site/books/e/10.5445/KSP/1000151141/).
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Abstract
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://git.scc.kit.edu/iai-aida-templates/easyserve.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://git.scc.kit.edu/iai-aida-templates/easyserve/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Various research domains use machine learning approaches because
+they can solve complex tasks by learning from data.
+Deploying machine learning models, however, is not trivial
+and developers have to implement complete solutions
+which are often installed locally and include Graphical User Interfaces (GUIs).
+Distributing software to various users on-site has several problems.
+Therefore, we propose a concept to deploy software in the cloud.
+There are several frameworks available based on Representational State Transfer (REST)
+which can be used to implement cloud-based machine learning services.
+However, machine learning services for scientific users have special
+requirements that state-of-the-art REST frameworks do not cover completely.
+We contribute an EasyMLServe software framework to deploy machine learning
+services in the cloud using REST interfaces and generic local or web-based GUIs.
+Furthermore, we apply our framework on two real-world applications,
+i.e., energy time-series forecasting and cell instance segmentation.
+The EasyMLServe framework and the use cases are available on GitHub.
 
 ## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+
+To install the framework, simply use pip within this directory by calling `pip install .` or `pip install -e .` if you want to change the code and directly test it within your projects.
 
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+To deploy your own EasyMLServe services, you have to implement your own EasyMLServive class by implementing an `api_call` and an optional `load_model` method. The implemented service can be deployed using our EasyMLServer class which expects an EasyMLService in the initialization method. Additionally, you can deploy an UI using GradioEasyMLUI or QtEasyMLUI classes. For further implementation details, please look at the examples or the paper.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## Examples
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+All available examples are located in the `examples` directory. Each example has its own `requirementy.txt`. If you want to run the examples, you have to install the `requirements.txt` via `pip install -r requirements.txt`. Some examples may require additional data or models. If so, a download.py is available within the directories. Please call `python download.py` within the directories.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+## Funding
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+This project is funded by the Helmholtz Association’s Initiative and Networking
+Fund through Helmholtz AI, the Helmholtz Association under the
+Programs “Energy System Design” (ESD) and „Natural, Artificial and Cognitive
+Information Processing“ (NACIP), and the German Research Foundation
+(DFG) under Germany’s Excellence Strategy – EXC number 2064/1 – Project
+number 390727645.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This code is licensed under the [MIT License](LICENSE).
