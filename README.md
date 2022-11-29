@@ -3,7 +3,7 @@
 This repository contains the Python implementation of the EasyMLServe framework presented in the paper:
 >[O. Neumann](mailto:oliver.neumann@kit.edu), Marcel Schilling, Markus Reischl, and Ralf Mikut, 2022, "EasyMLServe: Easy Deployment of REST Machine Learning Services," in Proceedings. 32. Workshop Computational Intelligence Berlin, 1. – 2. December 2022, H. Schulte, F. Hoffmann, R. Mikut (Eds.), KIT Scientific Publishing Karlsruhe, pp. 11-30.
 
-Available at [KIT Scientific Publishing](https://www.ksp.kit.edu/site/books/e/10.5445/KSP/1000151141/).
+Available at [arXiv](https://arxiv.org/abs/2211.14417) and [KIT Scientific Publishing](https://www.ksp.kit.edu/site/books/e/10.5445/KSP/1000151141/).
 
 ## Abstract
 
